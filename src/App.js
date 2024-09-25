@@ -8,12 +8,12 @@ function App() {
         {/* Fake Sidebar */}
         <div className='w-16'/>
         {/* backgrounds */}
-        <div className='w-screen h-screen bg-gray-700 flex align-middle justify-evenly'>
+        <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
 
           {/* messaging window */}
-          <div className=' w-3/12 h-screen bg-gray-300' ></div>
+          <div className=' w-[24%] h-[98%] bg-gray-300 rounded-3xl'></div>
           {/* chat window */}
-          <div className=' w-9/12 h-screen bg-gray-500'>
+          <div className=' w-[74%] h-[98%] bg-gray-500 rounded-3xl'>
 
           </div>
         </div>
