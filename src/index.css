@@ -16,4 +16,8 @@
         rounded-md shadow-md text-white bg-gray-900 text-xs
         font-bold transition-all duration-200 scale-0 origin-left
     }
+
+    .brt-rounded-3xl {
+        border-radius: 1.5rem 1.5rem 0 0;
+    }
 }
