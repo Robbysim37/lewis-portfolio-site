@@ -22,7 +22,7 @@ function Message({sender,timeStamp}) {
     return(
         <div className=' flex flex-col'>
             {sender === "user" && 
-                <div className='w-[75%] bg-white mb-10 mr-2 flex flex-col justify-end items-end self-end'>
+                <div className='w-[75%] mb-10 mr-2 flex flex-col justify-end items-end self-end'>
                 {/* Message Time Stamp */}
                     <div className='mr-[7%] text-gray-500'>You {timeStamp}</div>
                   {/* Text avatar wrapper */}
@@ -41,8 +41,8 @@ function Message({sender,timeStamp}) {
                     </div>
                 </div>}
               {sender === "computer" && 
-                <div className='w-[75%] bg-white mb-5 ml-2 flex flex-col justify-start items-start self-start'>
-                    <div className="ml-[7%] text-gray-500"> Robert Lewis {timeStamp}</div>
+                <div className='w-[75%] mb-5 ml-2 flex flex-col justify-start items-start self-start'>
+                    <div className="ml-[9%] text-gray-500"> Robert Lewis {timeStamp}</div>
                     <div className='flex'>
                         {/* ARR image */}
                         <div className='h-14 w-14 overflow-hidden'>
@@ -50,7 +50,7 @@ function Message({sender,timeStamp}) {
                         </div>
                         {/* Fake Text */}
                         <div className='bg-green-700 text-white w-full self-start rounded-3xl p-2 text-start'>
-                            this is a test
+                            Test string
                         </div>
                     </div>
               </div>}
