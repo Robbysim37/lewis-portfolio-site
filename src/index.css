@@ -19,11 +19,39 @@
 
     .message-selections {
         @apply mt-10 p-2 w-[80%] text-green-500 outline-green-500 
-        outline-2 outline rounded-3xl h-fit text-wrap text-center shadow-lg hover:bg-green-500
-        hover:text-white hover:cursor-pointer transition-all duration-300
+        outline-2 outline rounded-3xl h-fit text-wrap text-center shadow-lg hover:bg-green-600
+        hover:outline-green-600 hover:text-white hover:cursor-pointer transition-all duration-300
     }
 
     .brt-rounded-3xl {
         border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    .full-message-wrapper{
+        @apply max-w-[75%] h-fit flex my-5
+    }
+    .full-message-wrapper-user{
+        @apply max-w-[75%] h-fit flex my-5 self-end 
+    }
+    .image-container{
+        @apply w-12 h-[100%] flex justify-end mx-3
+    }
+    .robby-image{
+        @apply w-12 h-12 rounded-3xl object-cover 
+    }
+    .user-image{
+        @apply  text-green-500
+    }
+    .message-and-timestamp{
+        @apply flex flex-col  max-w-[50vw]
+    }
+    .timestamp{
+        @apply w-fit h-fit text-gray-400  text-sm 
+    }
+    .timestamp-user{
+        @apply w-fit h-fit text-gray-400  text-sm self-end
+    }
+    .message{
+        @apply w-fit bg-green-600 text-white py-2 px-4 rounded-3xl text-lg
     }
 }
