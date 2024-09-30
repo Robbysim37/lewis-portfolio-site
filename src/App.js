@@ -17,23 +17,6 @@ function App() {
   const timeArr = date.toLocaleTimeString().split(/[\s:]+/)
   const timeStamp = timeArr[0] + ":" + timeArr[1] + " " + timeArr[3]
 
-  // const router = createBrowserRouter([
-  //   {
-  //     path: "/",
-  //     element: <HomePage timeStamp={timeStamp} />
-  //   },
-  //   {
-  //     path: "projects",
-  //     element: <ProjectsPage/>
-  //   },
-  //   {
-  //     path: "contact",
-  //     element: <ContactMePage/>
-  //   }
-  // ])
-
-  // <RouterProvider router={router}></RouterProvider>
-
   return (
     <div className="flex">
       <Router>
