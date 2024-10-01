@@ -29,7 +29,7 @@ const SideBar = () => {
     }
 
   return (
-    <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-gray-900 text-white shadow-lg">
+    <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col z-[1000] bg-gray-900 text-white shadow-lg">
         <SideBarIcon action={navigateHome} icon={<GiChatBubble size={28}/>} text="Home" />
         <SideBarIcon action={navigateProjects} icon={<GoTrophy size={28}/>} text="Projects" />
         <SideBarIcon action={openEmail} icon={<HiOutlineMail size={28}/>} text="Email me" />

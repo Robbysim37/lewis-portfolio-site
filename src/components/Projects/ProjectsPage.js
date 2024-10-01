@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import projectsArr from "../../Data/projects";
 
 const ProjectsPage = () => {
@@ -43,6 +42,7 @@ const CardRow = ({children}) => {
 }
 
 const ProjectCard = ({children,imgURL,title}) => {
+
     return(
         <div className="flex flex-col w-[30%] h-fit mx-[1.66%] mt-8 group">
                 <div className=" bg-gray-700 text-gray-300 h-0 overflow-hidden brt-rounded-3xl
