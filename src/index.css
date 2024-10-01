@@ -55,6 +55,9 @@
         border-radius: 1.5rem 1.5rem 0 0;
     }
 
+    .brb-rounded-3xl {
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
     .full-message-wrapper{
         @apply max-w-[75%] h-fit flex my-5
     }
