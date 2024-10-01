@@ -49,8 +49,8 @@ const ProjectCard = ({children,imgURL,title}) => {
                  flex justify-center items-center text-lg group-hover:h-12 
                  group-hover:scale-100 transition-all duration-700">{title}</div>
                 <div className="h-[30vh]">
-                    <img className="w-full h-full object-fit rounded-3xl 
-                    group-hover:rounded-none transition-all duration-200" src={imgURL} alt="test"></img>
+                    <img className="w-full h-full object-fit rounded-3xl grayscale
+                    group-hover:rounded-none group-hover:grayscale-0 transition-all duration-200" src={imgURL} alt="test"></img>
                 </div>
             <div className=" overflow-hidden max-h-0 bg-gray-700 text-gray-300 brb-rounded-3xl 
              group-hover:max-h-96 group-hover:p-4 transition-all duration-700">
