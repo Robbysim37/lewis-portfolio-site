@@ -50,7 +50,7 @@ const ProjectCard = ({children,imgURL,title}) => {
                  group-hover:scale-100 transition-all duration-700">{title}</div>
                 <div className="h-[30vh]">
                     <img className="w-full h-full object-fit rounded-3xl 
-                    group-hover:rounded-none transition-all duration-1000" src={imgURL} alt="test"></img>
+                    group-hover:rounded-none transition-all duration-200" src={imgURL} alt="test"></img>
                 </div>
             <div className=" overflow-hidden max-h-0 bg-gray-700 text-gray-300 brb-rounded-3xl 
              group-hover:max-h-96 group-hover:p-4 transition-all duration-700">
