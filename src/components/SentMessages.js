@@ -7,7 +7,7 @@ export default function SentMessages({questionsAndAnswers,pendingResponse}) {
     <div className=' w-[74%] h-[98vh] bg-gray-800 flex flex-col justify-between rounded-3xl'>
 
         <div className='w-full h-[7%] bg-gray-700 flex justify-center items-center 
-        brt-rounded-3xl text-[2vw] text-gray-300'>Robert Lewis</div>
+        brt-rounded-3xl text-[2vw] font-bold text-gray-300'>Robert Lewis</div>
 
         <div className='w-full max-h-[93%] flex flex-col-reverse overflow-scroll
         no-scrollbar::-webkit-scrollbar no-scrollbar'>
