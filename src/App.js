@@ -20,14 +20,14 @@ function App() {
     })][0]
 
     matchingQA.prompt.timeStamp = createTimeStamp()
-    setQuestionsAndAnswers(previousMessages =>[...previousMessages,matchingQA.prompt])
+    setQuestionsAndAnswers(previousMessages =>[matchingQA.prompt, ...previousMessages])
 
     setPendingResponse(true)
 
     setTimeout(() => {
       setPendingResponse(false)
       matchingQA.answer.timeStamp = createTimeStamp()
-      setQuestionsAndAnswers(previousMessages => [...previousMessages, matchingQA.answer])
+      setQuestionsAndAnswers(previousMessages => [matchingQA.answer, ...previousMessages])
     }, 2000)
   }
 

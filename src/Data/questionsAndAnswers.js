@@ -1,5 +1,24 @@
 const questionsAndAnswersArr = [
 
+    
+    {
+        id:"15",
+        prompt: {
+            messageType: "user",
+            text: "Tell me about this website.",
+            timeStamp: ""
+        },
+        answer: {
+            messageType: "computer",
+            text:`Sure! I had the idea of an application that would allow hiring managers and developers to 
+            message me and get to know me more. Of course, all of these messages are pre-recorded, but I am 
+            currently looking into developing a backend for this website, where user's can login and ask me 
+            any question they want. That's why I emulated an instant messenger app. Making a website where you 
+            can only talk to one person is definitely not practical, but I felt it was creative enough to be an 
+            interesting project, and an interesting way to get in contact with people looking for a developer!`,
+            timeStamp: ""
+        }
+    },
     {
         id: "1",
         prompt: {
@@ -42,7 +61,7 @@ const questionsAndAnswersArr = [
             messageType: "computer",
             text:`I would say that I'm a good communicator. I'm able to communicate ideas and concepts 
             clearly. I often enjoy talking about the process of whatever project I'm working on so I have 
-            quite a bit of experience `,
+            quite a bit of experience.`,
             timeStamp: ""
         }
     },
@@ -73,9 +92,10 @@ const questionsAndAnswersArr = [
         answer: {
             messageType: "computer",
             text:`Card games, board games, and video games for starters. I enjoy learning on my own time, 
-            so I am often reading, but usually non-fiction. Typically I pick up a book ona skill that I 
+            so I am often reading. Typically I pick up a book on a skill that I 
             recognize I am lacking in, or a skill I want to learn just for fun. I also enjoy camping, and 
-            every year I go camping with friends around Memorial Day weekend`,
+            every year I go camping with friends around Memorial Day weekend! If I could, I would go
+            way more often then I currently do.`,
             timeStamp: ""
         }
     },
@@ -89,9 +109,9 @@ const questionsAndAnswersArr = [
         answer: {
             messageType: "computer",
             text:`Definitely my ability to learn and adapt quickly. For example, if you believe I am 
-            lacking on a certain skill, tell me what that skill is, point me in the right direction, and 
-            I'll begin researching and learning as quickly as possible. I'm dedicated and hardworking to 
-            learning computer science principles both for my enjoyment and in the pursuit of getting a 
+            lacking on a certain skill, tell me what that skill is. Then, point me in the right direction and 
+            I'll begin researching and learning as quickly as possible. I'm dedicated and hardworking when it comes to 
+            learning computer science principles, both for my enjoyment and in the pursuit of getting a 
             career in software development.`,
             timeStamp: ""
         }
@@ -151,10 +171,10 @@ const questionsAndAnswersArr = [
         },
         answer: {
             messageType: "computer",
-            text:`I'm passionate about working to better my own future. I also am passionate about 
+            text:`I'm passionate about working to better my own future. I am also passionate about 
             supporting friends and family to make choices that benefit their own future. I can't say 
             I'm passionate about orginizations or causes, but in general I just want people to be as 
-            great as they can be. Myself included`,
+            great as they can be. Myself included!`,
             timeStamp: ""
         }
     },
@@ -200,30 +220,12 @@ const questionsAndAnswersArr = [
         },
         answer: {
             messageType: "computer",
-            text:`Typically I enjoy to have a direct contact with my management. Whenever I start of as a new 
-            I don't like being confused about certain policies or systems for long so I enjoy asking questions 
+            text:`Typically I enjoy to have a direct contact with my management. Whenever I start as a new hire 
+            I don't like being confused about certain policies or systems for long, so I enjoy asking questions 
             quickly and in person. When it comes to office vs remote vs hybrid, I definitely think my preferred 
             setup is a hybrid job. I have a physical building to report to, the opportunity to communicate with 
             coworkers and my leaders in person, but I also have the luxary of enjoying a more relaxed Friday 
             without a commute.`,
-            timeStamp: ""
-        }
-    },
-    {
-        id:"15",
-        prompt: {
-            messageType: "user",
-            text: "Tell me about this website.",
-            timeStamp: ""
-        },
-        answer: {
-            messageType: "computer",
-            text:`Sure! I had the idea of an application that would allow hiring managers and developers to 
-            message me and get to know me more. Of course, all of these messages are pre-recorded, but I am 
-            currently looking into developing a backend for this website, where user's can login and ask me 
-            any question they want. That's why I emulated an instant messenger app. Making a website where you 
-            can only talk to one person is definitely not practical, but I felt it was creative enough to be an 
-            interesting project, and an interesting way to get in contact with people looking to hire!`,
             timeStamp: ""
         }
     },

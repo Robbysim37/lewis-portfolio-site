@@ -8,7 +8,7 @@ const projectsArr = [
     {
         title: "Box Defender Excel",
         imgURL: boxDefender,
-        projectLink: "",
+        projectLink: "BoxDefender",
         description: `This is an original game I designed and coded in Excel using VBA.
         It uses custom class modules along with a custom game timer to move enemies at their own speed,
         Click this to download a copy, Once you boot up the game, just use the left and right arrow

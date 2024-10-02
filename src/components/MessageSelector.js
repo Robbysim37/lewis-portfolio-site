@@ -8,10 +8,10 @@ export default function MessageSelector({updateSentMessages}) {
     '>
       {/* Selections title */}
 
-      <div className='h-[7.5vh] w-full bg-gray-700 text-gray-300 brt-rounded-3xl flex items-center justify-center
+      <div className='h-[7%] w-full bg-gray-700 text-gray-300 brt-rounded-3xl flex items-center justify-center
       font-bold text-[2vw]'>Ask me anything</div>
 
-      <div className='h-[97%] w-full flex flex-col justify-start items-center overflow-scroll
+      <div className='max-h-[93%] w-full flex flex-col justify-start items-center overflow-scroll
       no-scrollbar::-webkit-scrollbar no-scrollbar'>
         <MessageSelections updateSentMessages={updateSentMessages}/>
       </div>

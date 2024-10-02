@@ -59,13 +59,13 @@
         border-radius: 0 0 1.5rem 1.5rem;
     }
     .full-message-wrapper{
-        @apply max-w-[75%] h-fit flex my-5
+        @apply h-fit flex my-5
     }
     .full-message-wrapper-user{
-        @apply max-w-[75%] h-fit flex my-5 self-end 
+        @apply h-fit flex my-5 self-end 
     }
     .image-container{
-        @apply w-12 h-[100%] flex justify-end mx-3
+        @apply w-12 h-12 flex justify-end mx-3
     }
     .robby-image{
         @apply w-12 h-12 rounded-3xl object-cover 

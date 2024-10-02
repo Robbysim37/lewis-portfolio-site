@@ -6,11 +6,13 @@ export default function SentMessages({questionsAndAnswers,pendingResponse}) {
   return (
     <div className=' w-[74%] h-[98vh] bg-gray-800 flex flex-col justify-between rounded-3xl'>
 
-        <div className='w-full h-[7.5vh] bg-gray-700 flex justify-center items-center 
+        <div className='w-full h-[7%] bg-gray-700 flex justify-center items-center 
         brt-rounded-3xl text-[2vw] text-gray-300'>Robert Lewis</div>
 
-        <div className='w-full h-fit flex flex-col overflow-scroll
+        <div className='w-full max-h-[93%] flex flex-col-reverse overflow-scroll
         no-scrollbar::-webkit-scrollbar no-scrollbar'>
+
+            {pendingResponse && <MessagePending/>}
             
             {questionsAndAnswers.map(currMessage => {
                 return(
@@ -22,8 +24,6 @@ export default function SentMessages({questionsAndAnswers,pendingResponse}) {
                     </>
                 )
             })}
-
-            {pendingResponse && <MessagePending/>}
 
         </div>
 
