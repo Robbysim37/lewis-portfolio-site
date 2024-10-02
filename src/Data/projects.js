@@ -8,7 +8,7 @@ const projectsArr = [
     {
         title: "Box Defender Excel",
         imgURL: boxDefender,
-        projectLink: "",
+        projectLink: "BoxDefender",
         description: `This is an original game I designed and coded in Excel using VBA.
         It uses custom class modules along with a custom game timer to move enemies at their own speed,
         Click this to download a copy, Once you boot up the game, just use the left and right arrow
@@ -39,26 +39,6 @@ const projectsArr = [
         description: `Not much to say about this one, It's a pretty simple two player Connect Four. 
         I made this app while I was learning React, so I spent my time focusing on learning structure and 
         logic as opposed to making it look pretty.`
-    },
-    {
-        title: "Maple Grove Student Tracker",
-        imgURL: MGST,
-        projectLink: "https://youtu.be/sIBnrap4mIs",
-        description: `The Maple Grove Student Tracker is and application I developed (both frontend and
-        backend) to help my local high school keep track of student records. Before this application they
-        tracked the progress of all students through physical paperwork. Clicking this link will take you
-        to a YouTube demonstration on how the frontend works, and how I incorperated Excel into its 
-        functionality `
-    },
-    {
-        title: "Maple Grove Student Tracker",
-        imgURL: MGST,
-        projectLink: "https://youtu.be/sIBnrap4mIs",
-        description: `The Maple Grove Student Tracker is and application I developed (both frontend and
-        backend) to help my local high school keep track of student records. Before this application they
-        tracked the progress of all students through physical paperwork. Clicking this link will take you
-        to a YouTube demonstration on how the frontend works, and how I incorperated Excel into its 
-        functionality `
     },
     {
         title: "Maple Grove Student Tracker",

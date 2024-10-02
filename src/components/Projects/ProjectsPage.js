@@ -1,5 +1,6 @@
 import React, { useState,useRef } from "react";
 import projectsArr from "../../Data/projects";
+import boxDefenderDownload from "../../Data/boxDefender.xlsm"
 
 const ProjectsPage = () => {
 
@@ -14,7 +15,7 @@ const ProjectsPage = () => {
         const currProject = projects[currCardNumber]
         console.log(currProject.imgURL)
         return(
-            <ProjectCard title={currProject.title} imgURL={currProject.imgURL}>{currProject.description}</ProjectCard>
+            <ProjectCard projectURL={currProject.projectLink} title={currProject.title} imgURL={currProject.imgURL}>{currProject.description}</ProjectCard>
         )
     }
 
@@ -41,7 +42,7 @@ const CardRow = ({children}) => {
     )
 }
 
-const ProjectCard = ({children,imgURL,title}) => {
+const ProjectCard = ({children,imgURL,title,projectURL}) => {
     
     const divRef = useRef(null)
 
@@ -53,8 +54,24 @@ const ProjectCard = ({children,imgURL,title}) => {
     }
   };
 
+  const DownloadBoxDefender = () => {
+    let link = document.createElement("a");
+    link.download = "BoxDefender"; // <- name instead of 'name'
+    link.href = boxDefenderDownload;
+    link.click();
+    link.remove();
+  }
+
+  const openProject = () => {
+    if(projectURL === "BoxDefender"){
+        DownloadBoxDefender()
+    }else{
+        window.open(projectURL)
+    }
+  }
+
     return(
-        <div ref={divRef} className="flex flex-col w-[30%] h-fit mx-[1.66%] mt-8 group">
+        <div onClick={openProject} ref={divRef} className="flex flex-col w-[30%] h-fit mx-[1.66%] mt-8 group">
                 <div  className=" bg-gray-700 text-gray-300 h-0 overflow-hidden brt-rounded-3xl
                  flex justify-center items-center text-lg group-hover:h-12 
                  group-hover:scale-100 transition-all duration-700">{title}</div>

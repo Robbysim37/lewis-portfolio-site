@@ -45,8 +45,8 @@
         font-bold transition-all duration-200 scale-0 origin-left
     }
 
-    .message-selections {
-        @apply mt-10 p-2 w-[80%] text-green-500 outline-green-500 
+    .message-prompt {
+        @apply my-5 p-2 w-[80%] text-green-500 outline-green-500 
         outline-2 outline rounded-3xl h-fit text-wrap text-center shadow-lg hover:bg-green-600
         hover:outline-green-600 hover:text-white hover:cursor-pointer transition-all duration-300
     }
@@ -59,13 +59,13 @@
         border-radius: 0 0 1.5rem 1.5rem;
     }
     .full-message-wrapper{
-        @apply max-w-[75%] h-fit flex my-5
+        @apply h-fit flex my-5
     }
     .full-message-wrapper-user{
-        @apply max-w-[75%] h-fit flex my-5 self-end 
+        @apply h-fit flex my-5 self-end 
     }
     .image-container{
-        @apply w-12 h-[100%] flex justify-end mx-3
+        @apply w-12 h-12 flex justify-end mx-3
     }
     .robby-image{
         @apply w-12 h-12 rounded-3xl object-cover 
