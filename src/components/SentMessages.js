@@ -2,17 +2,30 @@ import React from 'react'
 import { RxAvatar } from "react-icons/rx";
 import ARRImage from "../assets/profile.jpg"
 
-export default function SentMessages({timeStamp}) {
+export default function SentMessages({timeStamp, questionsAndAnswers}) {
   return (
-    <div className=' w-[74%] h-[98%] bg-gray-800 flex flex-col justify-start rounded-3xl'>
+    <div className=' w-[74%] h-[98vh] bg-gray-800 flex flex-col justify-start rounded-3xl'>
 
-        <div className='w-full h-[7%] bg-gray-700 flex justify-center items-center 
+        <div className='w-full h-[7.5vh] bg-gray-700 flex justify-center items-center 
         brt-rounded-3xl text-[2vw] text-gray-300'>Robert Lewis</div>
 
-        <div className='w-full h-[93%] flex flex-col-reverse'>
-            <MessagePending/>
-            <Message sender="user" timeStamp={timeStamp}>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Message>
-            <Message sender="computer" timeStamp={timeStamp}>test</Message>
+        <div className='w-full h-[93%] flex flex-col-reverse overflow-scroll 
+        no-scrollbar::-webkit-scrollbar no-scrollbar'>
+            {/* <MessagePending/> */}
+            {questionsAndAnswers.map(currMessage => {
+                return(
+                    <>
+                        <Message sender={currMessage.prompt.messageType} 
+                        timeStamp={currMessage.timeStamp}>
+                            {currMessage.prompt.text}
+                        </Message>
+                        <Message sender={currMessage.answer.messageType} 
+                        timeStamp={currMessage.timeStamp}>
+                            {currMessage.answer.text}
+                        </Message>
+                    </>
+                )
+            })}
         </div>
 
   </div>

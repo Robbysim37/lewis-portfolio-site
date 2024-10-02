@@ -49,26 +49,6 @@ const projectsArr = [
         tracked the progress of all students through physical paperwork. Clicking this link will take you
         to a YouTube demonstration on how the frontend works, and how I incorperated Excel into its 
         functionality `
-    },
-    {
-        title: "Maple Grove Student Tracker",
-        imgURL: MGST,
-        projectLink: "https://youtu.be/sIBnrap4mIs",
-        description: `The Maple Grove Student Tracker is and application I developed (both frontend and
-        backend) to help my local high school keep track of student records. Before this application they
-        tracked the progress of all students through physical paperwork. Clicking this link will take you
-        to a YouTube demonstration on how the frontend works, and how I incorperated Excel into its 
-        functionality `
-    },
-    {
-        title: "Maple Grove Student Tracker",
-        imgURL: MGST,
-        projectLink: "https://youtu.be/sIBnrap4mIs",
-        description: `The Maple Grove Student Tracker is and application I developed (both frontend and
-        backend) to help my local high school keep track of student records. Before this application they
-        tracked the progress of all students through physical paperwork. Clicking this link will take you
-        to a YouTube demonstration on how the frontend works, and how I incorperated Excel into its 
-        functionality `
     }
 ]
 

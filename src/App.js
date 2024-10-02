@@ -3,15 +3,16 @@ import SideBar from './components/SideBar';
 import { useState } from 'react';
 import MessageSelector from './components/MessageSelector';
 import SentMessages from './components/SentMessages';
-import {
-  createBrowserRouter,
-  RouterProvider
-} from "react-router-dom"
 import ProjectsPage from './components/Projects/ProjectsPage';
+import questionsAndAnswersArr from './Data/questionsAndAnswers';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
+
+  const [questionsAndAnswers, setQuestionsAndAnswers] = useState(questionsAndAnswersArr)
+
+  console.log(questionsAndAnswers)
 
   const [date] = useState(new Date())
   const timeArr = date.toLocaleTimeString().split(/[\s:]+/)
@@ -26,7 +27,7 @@ function App() {
           {/* background */}
           <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
           <Routes>
-            <Route path="" element={<HomePage timeStamp={timeStamp}/>} />
+            <Route path="" element={<HomePage questionsAndAnswers={questionsAndAnswers} timeStamp={timeStamp}/>} />
             <Route path="projects" element={<ProjectsPage/>} />
           </Routes>
           </div>
@@ -35,10 +36,10 @@ function App() {
   );
 }
 
-function HomePage({timeStamp}) {
+function HomePage({timeStamp, questionsAndAnswers}) {
   return(
   <>
-    <SentMessages timeStamp={timeStamp}/>
+    <SentMessages questionsAndAnswers={questionsAndAnswers} timeStamp={timeStamp}/>
     <MessageSelector/>
   </>
   )

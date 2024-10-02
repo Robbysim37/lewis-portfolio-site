@@ -45,8 +45,8 @@
         font-bold transition-all duration-200 scale-0 origin-left
     }
 
-    .message-selections {
-        @apply mt-10 p-2 w-[80%] text-green-500 outline-green-500 
+    .message-prompt {
+        @apply my-5 p-2 w-[80%] text-green-500 outline-green-500 
         outline-2 outline rounded-3xl h-fit text-wrap text-center shadow-lg hover:bg-green-600
         hover:outline-green-600 hover:text-white hover:cursor-pointer transition-all duration-300
     }
