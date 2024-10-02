@@ -1,46 +1,71 @@
-import React from "react";
+import React, { useState,useRef } from "react";
+import projectsArr from "../../Data/projects";
 
 const ProjectsPage = () => {
+
+    const [projects] = useState(projectsArr)
+    
+    const jsxArr = []
+    const cardRows = Math.ceil(projectsArr.length / 3)
+    let currCardNumber = -1
+
+    const addCards = () => {
+        currCardNumber++
+        const currProject = projects[currCardNumber]
+        console.log(currProject.imgURL)
+        return(
+            <ProjectCard title={currProject.title} imgURL={currProject.imgURL}>{currProject.description}</ProjectCard>
+        )
+    }
+
+    for(let i = 0; i < cardRows; i++){
+        jsxArr.push(<CardRow>
+            {projects[currCardNumber + 1] && addCards()}
+            {projects[currCardNumber + 1] && addCards()}
+            {projects[currCardNumber + 1] && addCards()}
+        </CardRow>)
+    }
+
     return(
-        <div className="bg-gray-700 h-[96%] w-[98%] rounded-3xl flex flex-col overflow-scroll no-scrollbar">
-            <div className="w-full h-[7%] brt-3xl bg-gray-400">Test</div>
-            <CardRow>
-                <ProjectCard></ProjectCard>
-                <ProjectCard></ProjectCard>
-                <ProjectCard></ProjectCard>
-            </CardRow>
-            <CardRow>
-                <ProjectCard></ProjectCard>
-                <ProjectCard></ProjectCard>
-                <ProjectCard></ProjectCard>
-            </CardRow>
-            <CardRow>
-                <ProjectCard></ProjectCard>
-                <ProjectCard></ProjectCard>
-                <ProjectCard></ProjectCard>
-            </CardRow>
-            <CardRow>
-                <ProjectCard></ProjectCard>
-                <ProjectCard></ProjectCard>
-                <ProjectCard></ProjectCard>
-            </CardRow>
+        <div className="bg-gray-800 h-[96%] w-[98%] rounded-3xl flex flex-col overflow-scroll no-scrollbar">
+            <div className="w-full h-[7%] brt-3xl bg-gray-700 text-white text-[2vw] 
+            flex justify-center items-center">Projects</div>
+                {jsxArr}
         </div>
     )
 }  
 
 const CardRow = ({children}) => {
     return(
-        <div className=" w-full h-fit flex justify-evenly">{children}</div>
+        <div className=" w-full h-fit flex justify-start">{children}</div>
     )
 }
 
-const ProjectCard = () => {
+const ProjectCard = ({children,imgURL,title}) => {
+    
+    const divRef = useRef(null)
+
+  const handleAnimationEnd = () => {
+    console.log("hits the thing")
+    if (divRef.current) {
+        console.log("hits the ref")
+      divRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
     return(
-        <div className="flex flex-col w-[30%] h-fit m-4 group">
-            <div className="h-[25vh] bg-white"></div>
-            <div className="scale-0 h-0 bg-blue-500 group-hover:scale-100 group-hover:h-12 transition-all duration-200">
-                test this text out but the length of the text is going to effect this component
-                this really sucks man
+        <div ref={divRef} className="flex flex-col w-[30%] h-fit mx-[1.66%] mt-8 group">
+                <div  className=" bg-gray-700 text-gray-300 h-0 overflow-hidden brt-rounded-3xl
+                 flex justify-center items-center text-lg group-hover:h-12 
+                 group-hover:scale-100 transition-all duration-700">{title}</div>
+                <div  className="h-[30vh]">
+                    <img  className="w-full h-full object-fit rounded-3xl grayscale
+                    group-hover:rounded-none group-hover:grayscale-0 transition-all duration-200" src={imgURL} alt="test"></img>
+                </div>
+                
+            <div onTransitionEnd={handleAnimationEnd} className=" overflow-hidden max-h-0 bg-gray-700 text-gray-300 brb-rounded-3xl 
+             group-hover:max-h-96 group-hover:p-4 transition-all duration-700">
+                {children}
             </div>
         </div>
     )

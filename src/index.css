@@ -40,7 +40,7 @@
     }
 
     .sidebar-tooltip {
-        @apply absolute w-auto p-2 m-2 min-w-max left-14
+        @apply absolute w-auto p-2 m-2 min-w-max left-14 
         rounded-md shadow-md text-white bg-gray-900 text-xs
         font-bold transition-all duration-200 scale-0 origin-left
     }
@@ -55,6 +55,9 @@
         border-radius: 1.5rem 1.5rem 0 0;
     }
 
+    .brb-rounded-3xl {
+        border-radius: 0 0 1.5rem 1.5rem;
+    }
     .full-message-wrapper{
         @apply max-w-[75%] h-fit flex my-5
     }
