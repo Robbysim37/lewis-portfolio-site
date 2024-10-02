@@ -1,7 +1,7 @@
 const questionsAndAnswersArr = [
 
     {
-        id:1,
+        id: "1",
         prompt: {
             messageType: "user",
             text: "How long have you been a developer?",
@@ -16,7 +16,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:2,
+        id:"2",
         prompt: {
             messageType: "user",
             text: "What do you do in your free time?",
@@ -32,7 +32,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:3,
+        id:"3",
         prompt: {
             messageType: "user",
             text: "What soft skills do you have?",
@@ -47,7 +47,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:4,
+        id:"4",
         prompt: {
             messageType: "user",
             text: "What technical skills do you have?",
@@ -64,7 +64,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:5,
+        id:"5",
         prompt: {
             messageType: "user",
             text: "What are some of your hobbies?",
@@ -80,7 +80,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:6,
+        id:"6",
         prompt: {
             messageType: "user",
             text: "What are your strengths?",
@@ -97,7 +97,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:7,
+        id:"7",
         prompt: {
             messageType: "user",
             text: "What are your weaknesses?",
@@ -112,7 +112,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:8,
+        id:"8",
         prompt: {
             messageType: "user",
             text: "Why should we hire you?",
@@ -128,7 +128,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:9,
+        id:"9",
         prompt: {
             messageType: "user",
             text: "How do you deal with stressful situations?",
@@ -143,7 +143,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:10,
+        id:"10",
         prompt: {
             messageType: "user",
             text: "What are you passionate about?",
@@ -159,7 +159,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:11,
+        id:"11",
         prompt: {
             messageType: "user",
             text: "How do you plan to achieve your career goals?",
@@ -174,7 +174,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:12,
+        id:"12",
         prompt: {
             messageType: "user",
             text: "What makes you unique?",
@@ -192,7 +192,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:14,
+        id:"14",
         prompt: {
             messageType: "user",
             text: "What type of environment do you prefer?",
@@ -210,7 +210,7 @@ const questionsAndAnswersArr = [
         }
     },
     {
-        id:15,
+        id:"15",
         prompt: {
             messageType: "user",
             text: "Tell me about this website.",

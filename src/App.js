@@ -10,13 +10,34 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
 
-  const [questionsAndAnswers, setQuestionsAndAnswers] = useState(questionsAndAnswersArr)
+  const [questionsAndAnswers, setQuestionsAndAnswers] = useState([])
+  const [pendingResponse, setPendingResponse] = useState(false)
 
-  console.log(questionsAndAnswers)
+  const updateSentMessages = (incomingId) => {
 
-  const [date] = useState(new Date())
-  const timeArr = date.toLocaleTimeString().split(/[\s:]+/)
-  const timeStamp = timeArr[0] + ":" + timeArr[1] + " " + timeArr[3]
+    const matchingQA = [...questionsAndAnswersArr.filter(el => {
+      return el.id === incomingId ? true : false
+    })][0]
+
+    matchingQA.prompt.timeStamp = createTimeStamp()
+    setQuestionsAndAnswers(previousMessages =>[...previousMessages,matchingQA.prompt])
+
+    setPendingResponse(true)
+
+    setTimeout(() => {
+      setPendingResponse(false)
+      matchingQA.answer.timeStamp = createTimeStamp()
+      setQuestionsAndAnswers(previousMessages => [...previousMessages, matchingQA.answer])
+    }, 2000)
+  }
+
+  const createTimeStamp = () => {
+    const date = new Date()
+    const timeArr = date.toLocaleTimeString().split(/[\s:]+/)
+    return timeArr[0] + ":" + timeArr[1] + " " + timeArr[3]
+  }
+
+
 
   return (
     <div className="flex">
@@ -27,7 +48,11 @@ function App() {
           {/* background */}
           <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
           <Routes>
-            <Route path="" element={<HomePage questionsAndAnswers={questionsAndAnswers} timeStamp={timeStamp}/>} />
+            <Route path="" element={<HomePage 
+            questionsAndAnswers={questionsAndAnswers} 
+            pendingResponse={pendingResponse}
+            updateSentMessages={updateSentMessages}
+            />} />
             <Route path="projects" element={<ProjectsPage/>} />
           </Routes>
           </div>
@@ -36,11 +61,15 @@ function App() {
   );
 }
 
-function HomePage({timeStamp, questionsAndAnswers}) {
+function HomePage({questionsAndAnswers,pendingResponse,updateSentMessages}) {
   return(
   <>
-    <SentMessages questionsAndAnswers={questionsAndAnswers} timeStamp={timeStamp}/>
-    <MessageSelector/>
+    <SentMessages 
+    questionsAndAnswers={questionsAndAnswers}
+    pendingResponse={pendingResponse}
+    />
+    <MessageSelector 
+    updateSentMessages={updateSentMessages}/>
   </>
   )
 }

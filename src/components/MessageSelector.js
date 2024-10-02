@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import questionsAndAnswersArr from '../Data/questionsAndAnswers'
 
-export default function MessageSelector() {
+export default function MessageSelector({updateSentMessages}) {
 
   return (
     <div className=' w-[24%] h-[98vh] bg-gray-800 flex flex-col justify-start items-center rounded-3xl
@@ -13,23 +13,28 @@ export default function MessageSelector() {
 
       <div className='h-[97%] w-full flex flex-col justify-start items-center overflow-scroll
       no-scrollbar::-webkit-scrollbar no-scrollbar'>
-        <MessageSelections/>
+        <MessageSelections updateSentMessages={updateSentMessages}/>
       </div>
 
     </div>
   )
 }
 
-function MessageSelections() {
+function MessageSelections({updateSentMessages}) {
 
-  const [prompts] = useState(questionsAndAnswersArr)
+  const [QAs] = useState(questionsAndAnswersArr)
+
+  const newMessage = (e) => {
+    const QAid = e.target.id.toString()
+    updateSentMessages(QAid)
+  }
 
   return (
     <>
-    {prompts.map((currPrompt, i) => {
+    {QAs.map(currQA => {
       return (
-        <div className='message-prompt'>
-        {currPrompt.prompt.text}
+        <div onClick={newMessage} key={Math.random()} id={currQA.id} className='message-prompt'>
+        {currQA.prompt.text}
       </div>
       )
     })}

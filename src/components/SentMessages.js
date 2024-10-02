@@ -2,30 +2,29 @@ import React from 'react'
 import { RxAvatar } from "react-icons/rx";
 import ARRImage from "../assets/profile.jpg"
 
-export default function SentMessages({timeStamp, questionsAndAnswers}) {
+export default function SentMessages({questionsAndAnswers,pendingResponse}) {
   return (
-    <div className=' w-[74%] h-[98vh] bg-gray-800 flex flex-col justify-start rounded-3xl'>
+    <div className=' w-[74%] h-[98vh] bg-gray-800 flex flex-col justify-between rounded-3xl'>
 
         <div className='w-full h-[7.5vh] bg-gray-700 flex justify-center items-center 
         brt-rounded-3xl text-[2vw] text-gray-300'>Robert Lewis</div>
 
-        <div className='w-full h-[93%] flex flex-col-reverse overflow-scroll 
+        <div className='w-full h-fit flex flex-col overflow-scroll
         no-scrollbar::-webkit-scrollbar no-scrollbar'>
-            {/* <MessagePending/> */}
+            
             {questionsAndAnswers.map(currMessage => {
                 return(
                     <>
-                        <Message sender={currMessage.prompt.messageType} 
+                        <Message sender={currMessage.messageType} 
                         timeStamp={currMessage.timeStamp}>
-                            {currMessage.prompt.text}
-                        </Message>
-                        <Message sender={currMessage.answer.messageType} 
-                        timeStamp={currMessage.timeStamp}>
-                            {currMessage.answer.text}
+                            {currMessage.text}
                         </Message>
                     </>
                 )
             })}
+
+            {pendingResponse && <MessagePending/>}
+
         </div>
 
   </div>
