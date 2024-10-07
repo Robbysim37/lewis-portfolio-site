@@ -28,8 +28,6 @@ const openGithub = () => {
     window.open("https://github.com/Robbysim37")
 }
 
-
-
 const SideBar = () => {
 
     const navigate = useNavigate()
@@ -43,7 +41,7 @@ const SideBar = () => {
     }
 
   return (
-    <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col z-[1000] bg-gray-900 text-white shadow-lg">
+    <div className={`mobile-sidebar sm:sidebar ${true ? "w-16" : "w-0"}`}>
         <SideBarIcon action={navigateHome} icon={<GiChatBubble size={28}/>} text="Home" />
         <SideBarIcon action={navigateProjects} icon={<GoTrophy size={28}/>} text="Projects" />
         <SideBarIcon action={openEmail} icon={<HiOutlineMail size={28}/>} text="Email me" />
@@ -57,9 +55,9 @@ const SideBar = () => {
 
 const SideBarIcon = ({icon,text,action}) => {
     return(
-        <div className='sidebar-icon group' onClick={action}>
+        <div className=' mobile-sidebar-icon sm:sidebar-icon group' onClick={action}>
             {icon}
-            <span className='sidebar-tooltip group-hover:scale-100'>
+            <span className='mobile-sidebar-tooltip sm:sidebar-tooltip group-hover:scale-100'>
                 {text}
             </span>
         </div>
