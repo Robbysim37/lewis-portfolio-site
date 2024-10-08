@@ -9,7 +9,7 @@ export default function MessageSelector({updateSentMessages}) {
       {/* Selections title */}
 
       <div className='h-[7%] w-full bg-gray-700 text-gray-300 brt-rounded-3xl flex items-center justify-center
-      font-bold text-[1.5vw]'>Quick Interview Questions</div>
+      font-bold text-[2vh]'>Quick Interview Questions</div>
 
       <div className='max-h-[93%] w-full flex flex-col justify-start items-center overflow-scroll
       no-scrollbar::-webkit-scrollbar no-scrollbar'>

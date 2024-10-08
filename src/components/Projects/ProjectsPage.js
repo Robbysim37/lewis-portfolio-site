@@ -28,9 +28,8 @@ const ProjectsPage = () => {
     }
 
     return(
-        <div className="bg-gray-800 h-[96%] w-[98%] rounded-3xl flex flex-col overflow-scroll no-scrollbar">
-            <div className="w-full h-[7%] brt-3xl bg-gray-700 text-white font-bold text-[2vw] 
-            flex justify-center items-center">Projects</div>
+        <div className="projects-background">
+            <div className="projects-header">Projects</div>
                 {jsxArr}
         </div>
     )

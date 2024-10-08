@@ -5,8 +5,11 @@ import MessageSelector from './components/MessageSelector';
 import SentMessages from './components/SentMessages';
 import ProjectsPage from './components/Projects/ProjectsPage';
 import questionsAndAnswersArr from './Data/questionsAndAnswers';
+import Media from "react-media"
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MobileHomePage from './mobile components/MobileHomePage';
+import MobileProjectsPage from './mobile components/MobileProjectsPage';
 
 function App() {
 
@@ -41,22 +44,37 @@ function App() {
 
   return (
     <div className="flex">
-      <Router>
-          <SideBar/>
-          {/* Fake Sidebar */}
-          <div className='w-16'/>
-          {/* background */}
-          <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
-          <Routes>
-            <Route path="" element={<HomePage 
-            questionsAndAnswers={questionsAndAnswers} 
-            pendingResponse={pendingResponse}
-            updateSentMessages={updateSentMessages}
-            />} />
-            <Route path="projects" element={<ProjectsPage/>} />
-          </Routes>
-          </div>
-        </Router>
+      <Media query="(min-width: 640px)">
+        {matches => {
+          return matches ? 
+          // Desktop View / Desktop Router
+          <Router>
+            <SideBar/>
+            {/* background */}
+            <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
+            <Routes>
+              <Route path="" element={<HomePage 
+              questionsAndAnswers={questionsAndAnswers} 
+              pendingResponse={pendingResponse}
+              updateSentMessages={updateSentMessages}
+              />} />
+              <Route path="projects" element={<ProjectsPage/>} />
+            </Routes>
+            </div>
+          </Router>
+          
+          : 
+          // Mobile View / Mobile Router
+          <Router>
+            <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
+            <Routes>
+              <Route path="" element={<MobileHomePage/>}/>
+              <Route path="projects" element={<MobileProjectsPage/>} />
+            </Routes>
+            </div>
+          </Router>
+        }}
+      </Media>
     </div>
   );
 }

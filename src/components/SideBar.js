@@ -41,6 +41,7 @@ const SideBar = () => {
     }
 
   return (
+    <>
     <div className={`mobile-sidebar sm:sidebar ${true ? "w-16" : "w-0"}`}>
         <SideBarIcon action={navigateHome} icon={<GiChatBubble size={28}/>} text="Home" />
         <SideBarIcon action={navigateProjects} icon={<GoTrophy size={28}/>} text="Projects" />
@@ -50,14 +51,16 @@ const SideBar = () => {
         <SideBarIcon action={downloadResume} icon={<GrDocumentText size={24}/>} text="Resume" />
         {/* <SideBarIcon icon={<FaDiscord size={28}/>} text="Discord page" /> */}
     </div>
+    { true && <div className='w-16'/>}
+    </>
   )
 }
 
 const SideBarIcon = ({icon,text,action}) => {
     return(
-        <div className=' mobile-sidebar-icon sm:sidebar-icon group' onClick={action}>
+        <div className='sidebar-icon group' onClick={action}>
             {icon}
-            <span className='mobile-sidebar-tooltip sm:sidebar-tooltip group-hover:scale-100'>
+            <span className='sidebar-tooltip group-hover:scale-100'>
                 {text}
             </span>
         </div>
