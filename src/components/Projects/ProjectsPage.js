@@ -1,10 +1,8 @@
-import React, { useState,useRef } from "react";
-import projectsArr from "../../Data/projects";
+import React, { useRef } from "react";
 import boxDefenderDownload from "../../Data/boxDefender.xlsm"
+import projectsArr from "../../Data/projects";
 
-const ProjectsPage = () => {
-
-    const [projects] = useState(projectsArr)
+const ProjectsPage = ({projects}) => {
     
     const jsxArr = []
     const cardRows = Math.ceil(projectsArr.length / 3)
@@ -46,9 +44,7 @@ const ProjectCard = ({children,imgURL,title,projectURL}) => {
     const divRef = useRef(null)
 
   const handleAnimationEnd = () => {
-    console.log("hits the thing")
     if (divRef.current) {
-        console.log("hits the ref")
       divRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };

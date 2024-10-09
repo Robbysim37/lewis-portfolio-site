@@ -6,7 +6,7 @@ import SentMessages from './components/SentMessages';
 import ProjectsPage from './components/Projects/ProjectsPage';
 import questionsAndAnswersArr from './Data/questionsAndAnswers';
 import Media from "react-media"
-
+import projectsArr from "./Data/projects";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MobileHomePage from './mobile components/MobileHomePage';
 import MobileProjectsPage from './mobile components/MobileProjectsPage';
@@ -15,6 +15,7 @@ function App() {
 
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState([])
   const [pendingResponse, setPendingResponse] = useState(false)
+  const [projects] = useState(projectsArr)
 
   const updateSentMessages = (incomingId) => {
 
@@ -58,7 +59,7 @@ function App() {
               pendingResponse={pendingResponse}
               updateSentMessages={updateSentMessages}
               />} />
-              <Route path="projects" element={<ProjectsPage/>} />
+              <Route path="projects" element={<ProjectsPage projects={projects}/>} />
             </Routes>
             </div>
           </Router>
@@ -69,7 +70,7 @@ function App() {
             <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
             <Routes>
               <Route path="" element={<MobileHomePage/>}/>
-              <Route path="projects" element={<MobileProjectsPage/>} />
+              <Route path="projects" element={<MobileProjectsPage projects={projects}/>} />
             </Routes>
             </div>
           </Router>

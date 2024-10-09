@@ -42,7 +42,7 @@ const SideBar = () => {
 
   return (
     <>
-    <div className={`mobile-sidebar sm:sidebar ${true ? "w-16" : "w-0"}`}>
+    <div className={`mobile-sidebar sm:sidebar`}>
         <SideBarIcon action={navigateHome} icon={<GiChatBubble size={28}/>} text="Home" />
         <SideBarIcon action={navigateProjects} icon={<GoTrophy size={28}/>} text="Projects" />
         <SideBarIcon action={openEmail} icon={<HiOutlineMail size={28}/>} text="Email me" />
@@ -51,7 +51,7 @@ const SideBar = () => {
         <SideBarIcon action={downloadResume} icon={<GrDocumentText size={24}/>} text="Resume" />
         {/* <SideBarIcon icon={<FaDiscord size={28}/>} text="Discord page" /> */}
     </div>
-    { true && <div className='w-16'/>}
+    <div className='w-16'/>
     </>
   )
 }
