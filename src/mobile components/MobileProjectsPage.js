@@ -3,13 +3,15 @@ import { useRef } from "react"
 import { RxHamburgerMenu } from "react-icons/rx";
 import boxDefenderDownload from "../Data/boxDefender.xlsm"
 
-export default function MobileProjectsPage({projects}) {
+export default function MobileProjectsPage({projects,openSidebar}) {
   return (
-    <div className="mobile-projects-background">
+    <div className="mobile-background">
 
-    <div className="mobile-projects-header">
-        <HeaderIcon icon={<RxHamburgerMenu size={28}/>}/>
-        <div>Projects</div>
+    <div className="mobile-header">
+        <div onClick={openSidebar} >
+            <HeaderIcon icon={<RxHamburgerMenu size={28}/>}/> 
+        </div>
+        <div className='col-start-2 col-end-4 text-[80%]'>Projects</div>
         <div></div>
     </div>
 

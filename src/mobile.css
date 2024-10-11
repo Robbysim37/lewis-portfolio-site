@@ -6,20 +6,31 @@
     .brt-rounded-3xl {
         border-radius: 1.5rem 1.5rem 0 0;
     }
-    .mobile-projects-header {
+    .mobile-sidebar{
+        @apply fixed top-0 left-0 h-screen m-0 flex flex-col z-[1000] overflow-hidden 
+        bg-gray-900 text-white shadow-lg transition-all
+    }
+    .mobile-message-selector{
+        @apply fixed top-0 h-screen m-0 flex flex-col z-[1000] overflow-hidden 
+        bg-gray-900 text-white shadow-lg transition-all
+    }
+    .mobile-sidebar-icon{
+        @apply text-green-500
+    }
+    .mobile-header {
         @apply w-full h-[7%] brt-rounded-3xl bg-gray-700 text-white font-bold 
-        grid grid-cols-3 items-center text-[4vh] text-center
+        grid grid-cols-4 items-center text-[4vh] text-center
     }
     .mobile-project-card {
         @apply h-1/2 w-1/2 bg-white
     }
     .mobile-project-card-title {
         @apply bg-gray-700 text-gray-300 h-0 overflow-hidden brt-rounded-3xl
-        flex justify-center items-center text-lg group-hover:h-12 
+        flex justify-center items-center text-lg group-hover:h-12
         group-hover:scale-100 w-[90%] transition-all duration-700
     }
-    .mobile-projects-background {
-        @apply bg-gray-800 h-[96%] w-[98%] rounded-3xl flex flex-col 
+    .mobile-background {
+        @apply bg-gray-800 h-[98%] w-[97%] rounded-3xl flex flex-col 
         overflow-scroll no-scrollbar
     }
 }

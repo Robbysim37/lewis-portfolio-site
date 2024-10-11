@@ -42,7 +42,7 @@ const SideBar = () => {
 
   return (
     <>
-    <div className={`mobile-sidebar sm:sidebar`}>
+    <div className={`sidebar`}>
         <SideBarIcon action={navigateHome} icon={<GiChatBubble size={28}/>} text="Home" />
         <SideBarIcon action={navigateProjects} icon={<GoTrophy size={28}/>} text="Projects" />
         <SideBarIcon action={openEmail} icon={<HiOutlineMail size={28}/>} text="Email me" />
