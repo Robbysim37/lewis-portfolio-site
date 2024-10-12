@@ -12,7 +12,7 @@
     }
     .mobile-message-selector{
         @apply fixed top-0 h-screen m-0 flex flex-col z-[1000] overflow-hidden 
-        bg-gray-900 text-white shadow-lg transition-all
+        bg-gray-900 text-white shadow-lg transition-all pointer-events-auto
     }
     .mobile-sidebar-icon{
         @apply text-green-500

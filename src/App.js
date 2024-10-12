@@ -17,6 +17,7 @@ function App() {
 
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState([])
   const [pendingResponse, setPendingResponse] = useState(false)
+  const [QAs] = useState(questionsAndAnswersArr)
   const [projects] = useState(projectsArr)
   
   const [sidebarOpen, setSidebarOpen] = useState(false)
@@ -52,6 +53,7 @@ function App() {
 
   const openSidebar = () => {
     setSidebarOpen(true)
+    setMobileMessageOpen(false)
   }
 
   const closeMessageSelect = () => {
@@ -60,6 +62,7 @@ function App() {
 
   const openMessageSelect = () => {
     setMobileMessageOpen(true)
+    setSidebarOpen(false)
   }
 
   return (
@@ -78,6 +81,7 @@ function App() {
               questionsAndAnswers={questionsAndAnswers} 
               pendingResponse={pendingResponse}
               updateSentMessages={updateSentMessages}
+              QAs={QAs}
               />} />
 
               <Route path="projects" element={<ProjectsPage 
@@ -92,15 +96,25 @@ function App() {
           // Mobile View / Mobile Router
           <Router>
             <MobileNavbar closeSidebar={closeSidebar} sidebarOpen={sidebarOpen}/>
-            <MobileMessageSelector mobileMessageOpen={mobileMessageOpen}/>
+
+            <MobileMessageSelector 
+            mobileMessageOpen={mobileMessageOpen} 
+            closeMessageSelect={closeMessageSelect}
+            updateSentMessages={updateSentMessages}
+            QAs={QAs}/>
+
             <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
+
             <Routes>
+
               <Route path="" element={<MobileHomePage
               openMessageSelect={openMessageSelect}
-              openSidebar={openSidebar}/>}/>
+              openSidebar={openSidebar} />}/>
+
               <Route path="projects" element={<MobileProjectsPage
               openSidebar={openSidebar}
               projects={projects}/>} />
+
             </Routes>
             </div>
           </Router>
@@ -110,7 +124,7 @@ function App() {
   );
 }
 
-function HomePage({questionsAndAnswers,pendingResponse,updateSentMessages}) {
+function HomePage({questionsAndAnswers,pendingResponse,updateSentMessages,QAs}) {
   return(
   <>
     <SentMessages 
@@ -118,7 +132,8 @@ function HomePage({questionsAndAnswers,pendingResponse,updateSentMessages}) {
     pendingResponse={pendingResponse}
     />
     <MessageSelector 
-    updateSentMessages={updateSentMessages}/>
+    updateSentMessages={updateSentMessages}
+    QAs={QAs}/>
   </>
   )
 }

@@ -11,20 +11,20 @@ import { FaGithub } from "react-icons/fa";
 import lewisResume from '../Data/lewisWebResume.pdf'
 
 
-const openEmail = () => {
+export const openEmail = () => {
     window.open("https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Robbysim37@gmail.com")
 }
-const openLinkedIn = () => {
+export const openLinkedIn = () => {
     window.open("https://www.linkedin.com/in/robert-lewis-a224151a1/")
 }
-const downloadResume = () => {
+export const downloadResume = () => {
     let link = document.createElement("a");
     link.download = "Robert Lewis Resume"; // <- name instead of 'name'
     link.href = lewisResume;
     link.click();
     link.remove();
 }
-const openGithub = () => {
+export const openGithub = () => {
     window.open("https://github.com/Robbysim37")
 }
 

@@ -13,7 +13,7 @@ const ProjectsPage = ({projects}) => {
         const currProject = projects[currCardNumber]
         console.log(currProject.imgURL)
         return(
-            <ProjectCard projectURL={currProject.projectLink} title={currProject.title} imgURL={currProject.imgURL}>{currProject.description}</ProjectCard>
+            <ProjectCard key={Math.random()} projectURL={currProject.projectLink} title={currProject.title} imgURL={currProject.imgURL}>{currProject.description}</ProjectCard>
         )
     }
 

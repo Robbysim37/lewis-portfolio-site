@@ -21,6 +21,7 @@ export default function MobileProjectsPage({projects,openSidebar}) {
     {projects.map(currProject => {
         return (
             <MobileProjectCard 
+            key={Math.random()}
             projectURL={currProject.projectLink} 
             title={currProject.title} 
             imgURL={currProject.imgURL}>
