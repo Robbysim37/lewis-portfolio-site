@@ -21,6 +21,36 @@
         @apply w-full h-[7%] brt-rounded-3xl bg-gray-700 text-white font-bold 
         grid grid-cols-4 items-center text-[4vh] text-center
     }
+    .mobile-message{
+        @apply w-fit bg-green-600 text-white py-2 px-4 rounded-3xl text-sm
+    }
+    .mobile-image-container{
+        @apply w-6 h-6 flex justify-start mx-3
+    }
+    .mobile-image-container-user{
+        @apply w-6 h-6 flex justify-end mx-3
+    }
+    .mobile-message-and-timestamp{
+        @apply flex flex-col  max-w-[65vw]
+    }
+    .mobile-robby-image{
+        @apply w-6 h-6 rounded-3xl object-cover 
+    }
+    .mobile-user-image{
+        @apply  text-green-500
+    }
+    .mobile-timestamp{
+        @apply w-fit h-fit text-gray-400  text-sm 
+    }
+    .mobile-timestamp-user{
+        @apply w-fit h-fit text-gray-400  text-sm self-end
+    }
+    .mobile-full-message-wrapper{
+        @apply h-fit flex my-3
+    }
+    .mobile-full-message-wrapper-user{
+        @apply h-fit flex my-3 self-end 
+    }
     .mobile-project-card {
         @apply h-1/2 w-1/2 bg-white
     }

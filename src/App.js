@@ -108,6 +108,8 @@ function App() {
             <Routes>
 
               <Route path="" element={<MobileHomePage
+              questionsAndAnswers={questionsAndAnswers} 
+              pendingResponse={pendingResponse}
               openMessageSelect={openMessageSelect}
               openSidebar={openSidebar} />}/>
 
