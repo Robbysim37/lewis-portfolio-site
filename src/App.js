@@ -5,13 +5,23 @@ import MessageSelector from './components/MessageSelector';
 import SentMessages from './components/SentMessages';
 import ProjectsPage from './components/Projects/ProjectsPage';
 import questionsAndAnswersArr from './Data/questionsAndAnswers';
-
+import Media from "react-media"
+import projectsArr from "./Data/projects";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MobileHomePage from './mobile components/MobileHomePage';
+import MobileProjectsPage from './mobile components/MobileProjectsPage';
+import MobileNavbar from './mobile components/MobileNavbar';
+import MobileMessageSelector from './mobile components/MobileMessageSelector';
 
 function App() {
 
   const [questionsAndAnswers, setQuestionsAndAnswers] = useState([])
   const [pendingResponse, setPendingResponse] = useState(false)
+  const [QAs] = useState(questionsAndAnswersArr)
+  const [projects] = useState(projectsArr)
+  
+  const [sidebarOpen, setSidebarOpen] = useState(false)
+  const [mobileMessageOpen, setMobileMessageOpen] = useState(false)
 
   const updateSentMessages = (incomingId) => {
 
@@ -37,31 +47,86 @@ function App() {
     return timeArr[0] + ":" + timeArr[1] + " " + timeArr[3]
   }
 
+  const closeSidebar = () => {
+    setSidebarOpen(false)
+  }
 
+  const openSidebar = () => {
+    setSidebarOpen(true)
+    setMobileMessageOpen(false)
+  }
+
+  const closeMessageSelect = () => {
+    setMobileMessageOpen(false)
+  }
+
+  const openMessageSelect = () => {
+    setMobileMessageOpen(true)
+    setSidebarOpen(false)
+  }
 
   return (
     <div className="flex">
-      <Router>
-          <SideBar/>
-          {/* Fake Sidebar */}
-          <div className='w-16'/>
-          {/* background */}
-          <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
-          <Routes>
-            <Route path="" element={<HomePage 
-            questionsAndAnswers={questionsAndAnswers} 
-            pendingResponse={pendingResponse}
+      <Media query="(min-width: 640px)">
+        {matches => {
+          return matches ? 
+          // Desktop View / Desktop Router
+          <Router>
+            <SideBar/>
+            {/* background */}
+            <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
+            <Routes>
+
+              <Route path="" element={<HomePage 
+              questionsAndAnswers={questionsAndAnswers} 
+              pendingResponse={pendingResponse}
+              updateSentMessages={updateSentMessages}
+              QAs={QAs}
+              />} />
+
+              <Route path="projects" element={<ProjectsPage 
+              projects={projects} 
+              />} />
+
+            </Routes>
+            </div>
+          </Router>
+          
+          : 
+          // Mobile View / Mobile Router
+          <Router>
+            <MobileNavbar closeSidebar={closeSidebar} sidebarOpen={sidebarOpen}/>
+
+            <MobileMessageSelector 
+            mobileMessageOpen={mobileMessageOpen} 
+            closeMessageSelect={closeMessageSelect}
             updateSentMessages={updateSentMessages}
-            />} />
-            <Route path="projects" element={<ProjectsPage/>} />
-          </Routes>
-          </div>
-        </Router>
+            QAs={QAs}/>
+
+            <div className='w-screen h-screen bg-black flex items-center justify-evenly'>
+
+            <Routes>
+
+              <Route path="" element={<MobileHomePage
+              questionsAndAnswers={questionsAndAnswers} 
+              pendingResponse={pendingResponse}
+              openMessageSelect={openMessageSelect}
+              openSidebar={openSidebar} />}/>
+
+              <Route path="projects" element={<MobileProjectsPage
+              openSidebar={openSidebar}
+              projects={projects}/>} />
+
+            </Routes>
+            </div>
+          </Router>
+        }}
+      </Media>
     </div>
   );
 }
 
-function HomePage({questionsAndAnswers,pendingResponse,updateSentMessages}) {
+function HomePage({questionsAndAnswers,pendingResponse,updateSentMessages,QAs}) {
   return(
   <>
     <SentMessages 
@@ -69,7 +134,8 @@ function HomePage({questionsAndAnswers,pendingResponse,updateSentMessages}) {
     pendingResponse={pendingResponse}
     />
     <MessageSelector 
-    updateSentMessages={updateSentMessages}/>
+    updateSentMessages={updateSentMessages}
+    QAs={QAs}/>
   </>
   )
 }

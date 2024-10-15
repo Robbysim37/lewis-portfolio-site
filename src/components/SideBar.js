@@ -4,17 +4,29 @@ import { GoTrophy } from "react-icons/go";
 import { HiOutlineMail } from "react-icons/hi";
 import { CiLinkedin } from "react-icons/ci";
 import { FaDiscord } from "react-icons/fa";
+import { GrDocumentText } from "react-icons/gr";
 import { useNavigate } from 'react-router-dom';
+import { FaGithub } from "react-icons/fa";
+
+import lewisResume from '../Data/lewisWebResume.pdf'
 
 
-const openEmail = () => {
+export const openEmail = () => {
     window.open("https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=Robbysim37@gmail.com")
 }
-const openLinkedIn = () => {
+export const openLinkedIn = () => {
     window.open("https://www.linkedin.com/in/robert-lewis-a224151a1/")
 }
-
-
+export const downloadResume = () => {
+    let link = document.createElement("a");
+    link.download = "Robert Lewis Resume"; // <- name instead of 'name'
+    link.href = lewisResume;
+    link.click();
+    link.remove();
+}
+export const openGithub = () => {
+    window.open("https://github.com/Robbysim37")
+}
 
 const SideBar = () => {
 
@@ -29,13 +41,18 @@ const SideBar = () => {
     }
 
   return (
-    <div className="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col z-[1000] bg-gray-900 text-white shadow-lg">
+    <>
+    <div className={`sidebar`}>
         <SideBarIcon action={navigateHome} icon={<GiChatBubble size={28}/>} text="Home" />
         <SideBarIcon action={navigateProjects} icon={<GoTrophy size={28}/>} text="Projects" />
         <SideBarIcon action={openEmail} icon={<HiOutlineMail size={28}/>} text="Email me" />
         <SideBarIcon action={openLinkedIn} icon={<CiLinkedin size={28}/>} text="LinkedIn page" />
+        <SideBarIcon action={openGithub} icon={<FaGithub size={28}/>} text="Github" />
+        <SideBarIcon action={downloadResume} icon={<GrDocumentText size={24}/>} text="Resume" />
         {/* <SideBarIcon icon={<FaDiscord size={28}/>} text="Discord page" /> */}
     </div>
+    <div className='w-16'/>
+    </>
   )
 }
 

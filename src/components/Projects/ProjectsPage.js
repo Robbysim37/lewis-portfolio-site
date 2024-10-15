@@ -1,10 +1,8 @@
-import React, { useState,useRef } from "react";
-import projectsArr from "../../Data/projects";
+import React, { useRef } from "react";
 import boxDefenderDownload from "../../Data/boxDefender.xlsm"
+import projectsArr from "../../Data/projects";
 
-const ProjectsPage = () => {
-
-    const [projects] = useState(projectsArr)
+const ProjectsPage = ({projects}) => {
     
     const jsxArr = []
     const cardRows = Math.ceil(projectsArr.length / 3)
@@ -15,7 +13,7 @@ const ProjectsPage = () => {
         const currProject = projects[currCardNumber]
         console.log(currProject.imgURL)
         return(
-            <ProjectCard projectURL={currProject.projectLink} title={currProject.title} imgURL={currProject.imgURL}>{currProject.description}</ProjectCard>
+            <ProjectCard key={Math.random()} projectURL={currProject.projectLink} title={currProject.title} imgURL={currProject.imgURL}>{currProject.description}</ProjectCard>
         )
     }
 
@@ -28,9 +26,8 @@ const ProjectsPage = () => {
     }
 
     return(
-        <div className="bg-gray-800 h-[96%] w-[98%] rounded-3xl flex flex-col overflow-scroll no-scrollbar">
-            <div className="w-full h-[7%] brt-3xl bg-gray-700 text-white font-bold text-[2vw] 
-            flex justify-center items-center">Projects</div>
+        <div className="projects-background">
+            <div className="projects-header">Projects</div>
                 {jsxArr}
         </div>
     )
@@ -47,9 +44,7 @@ const ProjectCard = ({children,imgURL,title,projectURL}) => {
     const divRef = useRef(null)
 
   const handleAnimationEnd = () => {
-    console.log("hits the thing")
     if (divRef.current) {
-        console.log("hits the ref")
       divRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
